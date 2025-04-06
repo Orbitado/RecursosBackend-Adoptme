@@ -8,6 +8,7 @@ import adoptionsRouter from "./routes/adoption.router.js";
 import sessionsRouter from "./routes/sessions.router.js";
 import mocksRouter from "./routes/mocks.router.js";
 import dotenv from "dotenv";
+import { serveSwagger, setupSwagger } from "./docs/swagger.js";
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ mongoose
 app.use(express.json());
 app.use(cookieParser());
 
+app.use("/api-docs", serveSwagger, setupSwagger);
 app.use("/api/users", usersRouter);
 app.use("/api/pets", petsRouter);
 app.use("/api/adoptions", adoptionsRouter);
