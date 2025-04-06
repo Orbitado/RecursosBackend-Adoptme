@@ -1,5 +1,14 @@
 # Adopt Me API
 
+## Docker Image
+This application is available as a Docker image at:
+https://hub.docker.com/r/orbitado/adoptme
+
+You can pull it using:
+```bash
+docker pull orbitado/adoptme:latest
+```
+
 ## Docker Testing Instructions
 
 ### Prerequisites
@@ -15,7 +24,7 @@ cd RecursosBackend-Adoptme
 ### Step 2: Set Up Environment Variables
 Create a `.env` file in the root directory with the following content:
 ```
-MONGO_URI="mongodb+srv://<username>:<password>@cluster.mongodb.net/<database>?retryWrites=true&w=majority"
+MONGO_URI="mongodb+srv://username:password@cluster.mongodb.net/database?retryWrites=true&w=majority"
 PORT=8080
 ```
 **Note:** Replace with appropriate MongoDB connection string. For testing purposes, you can use the provided connection string.
@@ -86,4 +95,4 @@ The tests verify basic API functionality:
 - Handling invalid adoption requests
 - Error responses for non-existent resources
 
-To add your own tests, create new test files and import them in the `supertest.test.js` file. 
+To add your own tests, create new test files and import them in the `supertest.test.js` file.
