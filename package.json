@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
+    "compose:up": "docker compose up -d",
+    "compose:down": "docker compose down",
     "test": "mocha test/supertest.test.js"
   },
   "keywords": [],

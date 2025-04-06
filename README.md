@@ -55,3 +55,35 @@ npm start
 - If you see connection errors, verify the MongoDB URI is correct
 - Ensure ports 8080 is not being used by another application
 - Check Docker logs: `docker-compose logs` 
+
+## Docker Container Management
+For easier Docker container management, you can use the following npm scripts:
+
+```bash
+# Start containers in detached mode
+npm run compose:up
+
+# Stop containers
+npm run compose:down
+```
+
+## Testing
+This project includes automated tests using Mocha, Chai, and Supertest.
+
+### Running Tests
+To run the tests, make sure your application is running (either with Docker or directly), then execute:
+
+```bash
+npm test
+```
+
+### Test Suite Structure
+- `supertest.test.js`: Entry point that imports all test files
+- `adoption.test.js`: Tests for the adoption API endpoints
+
+The tests verify basic API functionality:
+- Retrieving adoptions
+- Handling invalid adoption requests
+- Error responses for non-existent resources
+
+To add your own tests, create new test files and import them in the `supertest.test.js` file. 
